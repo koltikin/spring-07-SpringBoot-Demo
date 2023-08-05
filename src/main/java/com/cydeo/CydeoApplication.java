@@ -21,8 +21,8 @@ public class CydeoApplication {
 
 		CommentService commentService = context.getBean(CommentService.class);
 		commentService.publishComment(myComment);
-		commentService.printAppConfigData(context.getBean(AppConfigData.class));
-		commentService.printDBConfigData(context.getBean(DBConfigData.class));
+		commentService.printAppConfigData();
+		commentService.printDBConfigData();
 	}
 
 }
