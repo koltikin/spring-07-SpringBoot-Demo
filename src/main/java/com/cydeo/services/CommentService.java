@@ -5,18 +5,20 @@ import com.cydeo.config.DBConfigData;
 import com.cydeo.model.Comment;
 import com.cydeo.proxy.CommentNotificationProxy;
 import com.cydeo.repository.CommentRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+@AllArgsConstructor
 public class CommentService {
     private final CommentRepository commentRepository;
     private final CommentNotificationProxy commentNotificationProxy;
-
     private final AppConfigData appConfigData;
     private final DBConfigData dbConfigData;
 
-    public CommentService(CommentRepository commentRepository, @Qualifier("EMAIL") CommentNotificationProxy commentNotificationProxy, AppConfigData appConfigData, DBConfigData dbConfigData) {
+    public CommentService(CommentRepository commentRepository, @Qualifier("EMAIL") CommentNotificationProxy commentNotificationProxy,
+                          AppConfigData appConfigData, DBConfigData dbConfigData) {
         this.commentRepository = commentRepository;
         this.commentNotificationProxy = commentNotificationProxy;
 
