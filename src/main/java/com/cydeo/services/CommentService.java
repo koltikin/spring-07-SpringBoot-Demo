@@ -17,15 +17,6 @@ public class CommentService {
     private final AppConfigData appConfigData;
     private final DBConfigData dbConfigData;
 
-    public CommentService(CommentRepository commentRepository, @Qualifier("EMAIL") CommentNotificationProxy commentNotificationProxy,
-                          AppConfigData appConfigData, DBConfigData dbConfigData) {
-        this.commentRepository = commentRepository;
-        this.commentNotificationProxy = commentNotificationProxy;
-
-        this.appConfigData = appConfigData;
-        this.dbConfigData = dbConfigData;
-    }
-
     public void publishComment(Comment comment){
         // save in the DB
         commentRepository.storeComment(comment);
