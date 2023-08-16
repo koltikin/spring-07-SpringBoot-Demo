@@ -1,7 +1,5 @@
 package com.cydeo;
 
-import com.cydeo.config.AppConfigData;
-import com.cydeo.config.DBConfigData;
 import com.cydeo.model.Comment;
 import com.cydeo.services.CommentService;
 import org.springframework.boot.SpringApplication;
